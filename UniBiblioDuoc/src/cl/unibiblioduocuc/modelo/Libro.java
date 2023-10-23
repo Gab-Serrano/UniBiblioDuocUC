@@ -2,7 +2,7 @@ package cl.unibiblioduocuc.modelo;
 
 /**
  *
- * @author vina
+ * @author Gabriel Serrano
  */
 public class Libro {
     

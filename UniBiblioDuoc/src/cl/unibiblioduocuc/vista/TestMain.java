@@ -2,7 +2,7 @@ package cl.unibiblioduocuc.vista;
 
 /**
  *
- * @author vina
+ * @author Gabriel Serrano 
  */
 public class TestMain {
     public static void main(String[] args) {
