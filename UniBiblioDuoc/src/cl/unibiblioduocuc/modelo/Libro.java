@@ -120,6 +120,18 @@ public class Libro {
     }
     
     //Métodos customizados
-    
+    public void imprimirDetalles(){
+        System.out.println(
+                "ID: " + id + "\n" +
+                "Título: " + titulo + "\n" +
+                "Autor: " + nomAutor + "\n" +
+                "Editorial: " + titulo + "\n" +
+                "Año: " + annoPublicacion + "\n" +
+                "Género: " + genero + "\n" +
+                "ISBN: " + isbn + "\n" +
+                "Colección: " + coleccion + "\n" +
+                "Estado: " + estado + "\n"
+        );
+    }
     
 }
