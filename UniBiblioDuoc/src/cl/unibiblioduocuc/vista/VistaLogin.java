@@ -4,16 +4,23 @@
  */
 package cl.unibiblioduocuc.vista;
 
+import cl.unibiblioduocuc.controlador.ControladorLogin;
+import cl.unibiblioduocuc.modelo.TestBD;
+
 /**
  *
  * @author Gabriel
  */
-public class VistaPrincipal extends javax.swing.JFrame {
+public class VistaLogin extends javax.swing.JFrame {
+
+    private final TestBD bd = new TestBD();
+    private final ControladorLogin contLogin = new ControladorLogin(bd);
 
     /**
      * Creates new form VistaPrincipal
      */
-    public VistaPrincipal() {
+    public VistaLogin() {
+
         initComponents();
     }
 
@@ -93,7 +100,8 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jPanel2.add(jLabel4, gridBagConstraints);
 
         txt_emailLogin.setBackground(new java.awt.Color(229, 229, 229));
-        txt_emailLogin.setPreferredSize(new java.awt.Dimension(140, 40));
+        txt_emailLogin.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        txt_emailLogin.setPreferredSize(new java.awt.Dimension(140, 28));
         txt_emailLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_emailLoginActionPerformed(evt);
@@ -121,7 +129,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jPanel2.add(btn_login, gridBagConstraints);
 
         txt_passLogin.setBackground(new java.awt.Color(229, 229, 229));
-        txt_passLogin.setPreferredSize(new java.awt.Dimension(140, 22));
+        txt_passLogin.setPreferredSize(new java.awt.Dimension(140, 28));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -171,7 +179,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_emailLoginActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        // TODO add your handling code here:
+        String email = txt_emailLogin.getText();
+        String password = String.copyValueOf(txt_passLogin.getPassword());
+        contLogin.handleLogin(email, password);
     }//GEN-LAST:event_btn_loginActionPerformed
 
     /**
@@ -191,20 +201,21 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaPrincipal().setVisible(true);
+                new VistaLogin().setVisible(true);
             }
         });
     }

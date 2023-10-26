@@ -11,8 +11,8 @@ public class TestMain {
     public static void main(String[] args) {
         TestBD bd = new TestBD();
         
-        for (Libro libro : bd.obtenerLibros()) {
-            libro.imprimirDetalles();
-        }
+        //"juan.perez@biblioteca.com", "admin123"
+        System.out.println(bd.validarCredenciales("juan.perez@biblioteca.com", "admin1234"));
+        
     }
 }

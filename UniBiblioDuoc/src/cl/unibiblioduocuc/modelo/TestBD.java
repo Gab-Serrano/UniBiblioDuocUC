@@ -26,14 +26,16 @@ public class TestBD {
     //Métodos customizados
     /**
      * Método que devuelve un ArrayList con libros.
-     * 
-     * Método devuelve un ArrayList con los libros presentes en la colección, en el atributo ´libros´.
+     *
+     * Método devuelve un ArrayList con los libros presentes en la colección, en
+     * el atributo ´libros´.
+     *
      * @return ArrayList con los libros presentes en la colección.
      */
-    public ArrayList<Libro> obtenerLibros(){
+    public ArrayList<Libro> obtenerLibros() {
         return this.libros;
     }
-    
+
     /**
      * Método que llena la BD simulada con datos.
      *
@@ -42,6 +44,8 @@ public class TestBD {
      * simulada tenga datos desde el inicio de la ejecución del programa
      */
     private void agregarDatosMockUp() {
+
+        //Datos de libros
         this.libros.add(new Libro(1, "Cien años de soledad", "Gabriel García Márquez", "Editorial Sudamericana", 1967, "Realismo mágico", "978-84-663-0344-6", "Disponible", "Clásicos", "Una obra maestra de la literatura latinoamericana."));
         this.libros.add(new Libro(2, "1984", "George Orwell", "Editorial Secker & Warburg", 1949, "Ciencia ficción", "978-0-452-28423-4", "Prestado", "Ficción distópica", "Una visión sombría del futuro totalitario."));
         this.libros.add(new Libro(3, "El Gran Gatsby", "F. Scott Fitzgerald", "Editorial Charles Scribner's Sons", 1925, "Ficción", "978-0-7432-7356-5", "Disponible", "Clásicos", "Una historia de decadencia y ambición en los años 20."));
@@ -52,5 +56,22 @@ public class TestBD {
         this.libros.add(new Libro(8, "El Señor de los Anillos: La Comunidad del Anillo", "J.R.R. Tolkien", "Editorial Allen & Unwin", 1954, "Fantasía épica", "978-84-450-7058-9", "Disponible", "Trilogía El Señor de los Anillos", "El inicio de la épica búsqueda del anillo."));
         this.libros.add(new Libro(9, "Crónica de una muerte anunciada", "Gabriel García Márquez", "Editorial La Oveja Negra", 1981, "Ficción", "978-84-8346-681-3", "Prestado", "Realismo mágico", "El asesinato anunciado de Santiago Nasar."));
         this.libros.add(new Libro(10, "Orgullo y prejuicio", "Jane Austen", "Editorial T. Egerton", 1813, "Novela romántica", "978-84-16042-73-5", "Disponible", "Clásicos", "La historia de Elizabeth Bennet y Mr. Darcy."));
+
+        //Datos de Bibliotecarios
+        this.bibliotecarios.add(new Bibliotecario(1, "19.345.678-9", "Juan", "Pérez", "juan.perez@biblioteca.com", "admin123"));
+        this.bibliotecarios.add(new Bibliotecario(2, "15.234.567-8", "María", "Rodríguez", "maria.rodriguez@biblioteca.com", "admin123"));
+        this.bibliotecarios.add(new Bibliotecario(3, "12.123.456-7", "Carlos", "Soto", "carlos.soto@biblioteca.com", "admin123"));
+        this.bibliotecarios.add(new Bibliotecario(4, "17.456.789-0", "Ana", "González", "ana.gonzalez@biblioteca.com", "admin123"));
+        this.bibliotecarios.add(new Bibliotecario(5, "20.567.890-k", "Pedro", "Morales", "pedro.morales@biblioteca.com", "admin123"));
+
+    }
+    
+    public boolean validarCredenciales(String email, String password){
+        for (Bibliotecario bibliotecario : bibliotecarios) {
+            if (bibliotecario.getEmail().equalsIgnoreCase(email) && bibliotecario.getContraseña().equals(password)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
