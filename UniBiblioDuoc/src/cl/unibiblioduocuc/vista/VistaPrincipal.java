@@ -4,9 +4,6 @@
  */
 package cl.unibiblioduocuc.vista;
 
-import java.awt.Image;
-import java.awt.Toolkit;
-
 /**
  *
  * @author Gabriel
@@ -18,24 +15,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
      */
     public VistaPrincipal() {
         initComponents();
-        setIconImage(getIconImage());
-    }
-
-    //Ícono del JFrame
-    /**
-     * Obtiene la imagen que se utilizará como ícono de la ventana.
-     *
-     * Este método carga una imagen desde el recurso "img/logo.png" y la
-     * devuelve como un objeto Image. El ícono de la ventana se utiliza en la
-     * esquina superior izquierda de la ventana y en la barra de tareas de
-     * Windows cuando la ventana está minimizada.
-     *
-     * @return La imagen que se utilizará como ícono de la ventana.
-     */
-    @Override
-    public Image getIconImage() {
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("cl/unibiblioduocuc/img/logo-small.png"));
-        return retValue;
     }
 
     /**
@@ -46,45 +25,154 @@ public class VistaPrincipal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txt_emailLogin = new javax.swing.JTextField();
+        btn_login = new javax.swing.JButton();
+        txt_passLogin = new javax.swing.JPasswordField();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("UniBiblio Duoc UC - Sistema de Gestión de Biblioteca");
-        setName("frame1"); // NOI18N
+        setTitle("UniBiblio Duoc UC");
+        setMaximumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(800, 600));
         setPreferredSize(new java.awt.Dimension(800, 600));
-        setSize(new java.awt.Dimension(0, 0));
+        setResizable(false);
+        setSize(new java.awt.Dimension(800, 600));
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(500, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 102));
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0};
+        jPanel1Layout.rowHeights = new int[] {0, 0, 0};
+        jPanel1.setLayout(jPanel1Layout);
+
+        jLabel1.setFont(new java.awt.Font("Open Sans", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(229, 229, 229));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Inicio de Sesión");
+        jLabel1.setPreferredSize(new java.awt.Dimension(150, 33));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.5;
+        jPanel1.add(jLabel1, gridBagConstraints);
+
+        jPanel2.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel2.setPreferredSize(new java.awt.Dimension(50, 100));
+        java.awt.GridBagLayout jPanel2Layout = new java.awt.GridBagLayout();
+        jPanel2Layout.columnWidths = new int[] {0, 10, 0};
+        jPanel2Layout.rowHeights = new int[] {0, 20, 0, 20, 0};
+        jPanel2.setLayout(jPanel2Layout);
+
+        jLabel3.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(229, 229, 229));
+        jLabel3.setText("Correo Electrónico:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(jLabel3, gridBagConstraints);
+
+        jLabel4.setFont(new java.awt.Font("Open Sans", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(229, 229, 229));
+        jLabel4.setText("Contraseña:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        jPanel2.add(jLabel4, gridBagConstraints);
+
+        txt_emailLogin.setBackground(new java.awt.Color(229, 229, 229));
+        txt_emailLogin.setPreferredSize(new java.awt.Dimension(140, 40));
+        txt_emailLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_emailLoginActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        jPanel2.add(txt_emailLogin, gridBagConstraints);
+
+        btn_login.setBackground(new java.awt.Color(229, 229, 229));
+        btn_login.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
+        btn_login.setForeground(new java.awt.Color(0, 51, 102));
+        btn_login.setText("Ingresar");
+        btn_login.setPreferredSize(new java.awt.Dimension(100, 30));
+        btn_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_loginActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        jPanel2.add(btn_login, gridBagConstraints);
+
+        txt_passLogin.setBackground(new java.awt.Color(229, 229, 229));
+        txt_passLogin.setPreferredSize(new java.awt.Dimension(140, 22));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        jPanel2.add(txt_passLogin, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.5;
+        jPanel1.add(jPanel2, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.3;
+        gridBagConstraints.weighty = 1.0;
+        getContentPane().add(jPanel1, gridBagConstraints);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setPreferredSize(new java.awt.Dimension(400, 100));
-        jPanel3.setRequestFocusEnabled(false);
         jPanel3.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setFont(new java.awt.Font("Open Sans Semibold", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(1, 37, 68));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Bienvenido a UniBiblio de Duoc UC");
-        jLabel1.setToolTipText("");
-        jPanel3.add(jLabel1, java.awt.BorderLayout.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cl/unibiblioduocuc/img/logo-full-white.png"))); // NOI18N
+        jLabel2.setToolTipText("");
+        jLabel2.setAlignmentX(0.5F);
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel2.setMinimumSize(new java.awt.Dimension(100, 200));
+        jLabel2.setPreferredSize(new java.awt.Dimension(100, 200));
+        jPanel3.add(jLabel2, java.awt.BorderLayout.CENTER);
 
-        jPanel1.add(jPanel3);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.7;
+        gridBagConstraints.weighty = 1.0;
+        getContentPane().add(jPanel3, gridBagConstraints);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.WEST);
-
-        jPanel2.setBackground(new java.awt.Color(1, 37, 68));
-        jPanel2.setMaximumSize(new java.awt.Dimension(0, 0));
-        jPanel2.setPreferredSize(new java.awt.Dimension(300, 0));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
-
-        pack();
+        setSize(new java.awt.Dimension(800, 600));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txt_emailLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_emailLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_emailLoginActionPerformed
+
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_loginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,9 +210,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_login;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField txt_emailLogin;
+    private javax.swing.JPasswordField txt_passLogin;
     // End of variables declaration//GEN-END:variables
 }
