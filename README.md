@@ -1,4 +1,4 @@
-# 📚 UniBiblioDuocUC: Sistema de Gestión de Biblioteca 📖
+# 📚 UniBiblioDuocUC: Sistema de Gestión Bibliotecaria 📖
 
 ¡Hola compañeros! 👋 Soy Gabriel Serrano, ayudante de la asignatura de desarrollo de software de escritorio (PGY2121) en Duoc UC. Este proyecto es para todos nosotros que estamos en este viaje de aprendizaje. 🚀 ¡Vamos a explorarlo!
 
