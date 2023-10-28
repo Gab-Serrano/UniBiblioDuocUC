@@ -20,7 +20,7 @@ public class Libro {
     public Libro() {
     }
 
-    public Libro(int id, String titulo, String nomAutor, String editorial, int annoPublicacion, String genero, String isbn, String estado, String coleccion, String resenna) {
+    public Libro(int id, String titulo, String nomAutor, String editorial, int annoPublicacion, String genero, String isbn, String estado, String coleccion) {
         this.id = id;
         this.titulo = titulo;
         this.nomAutor = nomAutor;
@@ -30,7 +30,6 @@ public class Libro {
         this.isbn = isbn;
         this.estado = estado;
         this.coleccion = coleccion;
-        this.resenna = resenna;
     }
 
     //Getters y Setters

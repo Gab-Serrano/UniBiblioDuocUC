@@ -6,6 +6,8 @@ package cl.unibiblioduocuc.vista;
 
 import cl.unibiblioduocuc.controlador.ControladorLogin;
 import cl.unibiblioduocuc.modelo.TestBD;
+import cl.unibiblioduocuc.utils.Utils;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -13,15 +15,21 @@ import cl.unibiblioduocuc.modelo.TestBD;
  */
 public class VistaLogin extends javax.swing.JFrame {
 
-    private final TestBD bd = new TestBD();
-    private final ControladorLogin contLogin = new ControladorLogin(bd);
+    private ControladorLogin contLogin;
 
     /**
      * Creates new form VistaPrincipal
      */
     public VistaLogin() {
-
         initComponents();
+        
+        Utils.cambiarIconoFrame(this);
+
+        // Crear la base de datos simulada
+        TestBD bd = new TestBD();
+
+        // Crear el controlador y pasarle la base de datos y la vista
+        contLogin = new ControladorLogin(bd, this);
     }
 
     /**
@@ -39,9 +47,9 @@ public class VistaLogin extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txt_emailLogin = new javax.swing.JTextField();
-        btn_login = new javax.swing.JButton();
-        txt_passLogin = new javax.swing.JPasswordField();
+        jTxt_emailLogin = new javax.swing.JTextField();
+        jBtn_login = new javax.swing.JButton();
+        jTxt_passLogin = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -99,41 +107,51 @@ public class VistaLogin extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel2.add(jLabel4, gridBagConstraints);
 
-        txt_emailLogin.setBackground(new java.awt.Color(229, 229, 229));
-        txt_emailLogin.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
-        txt_emailLogin.setPreferredSize(new java.awt.Dimension(140, 28));
-        txt_emailLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_emailLoginActionPerformed(evt);
+        jTxt_emailLogin.setBackground(new java.awt.Color(229, 229, 229));
+        jTxt_emailLogin.setFont(new java.awt.Font("Open Sans", 0, 12)); // NOI18N
+        jTxt_emailLogin.setPreferredSize(new java.awt.Dimension(140, 28));
+        jTxt_emailLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTxt_emailLoginKeyPressed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
-        jPanel2.add(txt_emailLogin, gridBagConstraints);
+        jPanel2.add(jTxt_emailLogin, gridBagConstraints);
 
-        btn_login.setBackground(new java.awt.Color(229, 229, 229));
-        btn_login.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
-        btn_login.setForeground(new java.awt.Color(0, 51, 102));
-        btn_login.setText("Ingresar");
-        btn_login.setPreferredSize(new java.awt.Dimension(100, 30));
-        btn_login.addActionListener(new java.awt.event.ActionListener() {
+        jBtn_login.setBackground(new java.awt.Color(229, 229, 229));
+        jBtn_login.setFont(new java.awt.Font("Open Sans", 1, 12)); // NOI18N
+        jBtn_login.setForeground(new java.awt.Color(0, 51, 102));
+        jBtn_login.setText("Ingresar");
+        jBtn_login.setPreferredSize(new java.awt.Dimension(100, 30));
+        jBtn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_loginActionPerformed(evt);
+                jBtn_loginActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 3;
-        jPanel2.add(btn_login, gridBagConstraints);
+        jPanel2.add(jBtn_login, gridBagConstraints);
 
-        txt_passLogin.setBackground(new java.awt.Color(229, 229, 229));
-        txt_passLogin.setPreferredSize(new java.awt.Dimension(140, 28));
+        jTxt_passLogin.setBackground(new java.awt.Color(229, 229, 229));
+        jTxt_passLogin.setPreferredSize(new java.awt.Dimension(140, 28));
+        jTxt_passLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTxt_passLoginActionPerformed(evt);
+            }
+        });
+        jTxt_passLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTxt_passLoginKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
-        jPanel2.add(txt_passLogin, gridBagConstraints);
+        jPanel2.add(jTxt_passLogin, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -174,15 +192,27 @@ public class VistaLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txt_emailLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_emailLoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_emailLoginActionPerformed
-
-    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        String email = txt_emailLogin.getText();
-        String password = String.copyValueOf(txt_passLogin.getPassword());
+    private void jBtn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_loginActionPerformed
+        String email = jTxt_emailLogin.getText();
+        String password = String.copyValueOf(jTxt_passLogin.getPassword());
         contLogin.handleLogin(email, password);
-    }//GEN-LAST:event_btn_loginActionPerformed
+    }//GEN-LAST:event_jBtn_loginActionPerformed
+
+    private void jTxt_emailLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxt_emailLoginKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            jBtn_login.doClick();  // Simula un clic en el botón al presionar Enter
+        }
+    }//GEN-LAST:event_jTxt_emailLoginKeyPressed
+
+    private void jTxt_passLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxt_passLoginKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            jBtn_login.doClick();  // Simula un clic en el botón al presionar Enter
+        }
+    }//GEN-LAST:event_jTxt_passLoginKeyPressed
+
+    private void jTxt_passLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTxt_passLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTxt_passLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,14 +244,16 @@ public class VistaLogin extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
+                //Crea la vista y el modelo
                 new VistaLogin().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_login;
+    private javax.swing.JButton jBtn_login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -229,7 +261,7 @@ public class VistaLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField txt_emailLogin;
-    private javax.swing.JPasswordField txt_passLogin;
+    private javax.swing.JTextField jTxt_emailLogin;
+    private javax.swing.JPasswordField jTxt_passLogin;
     // End of variables declaration//GEN-END:variables
 }
