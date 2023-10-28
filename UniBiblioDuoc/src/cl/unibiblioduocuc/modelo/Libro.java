@@ -1,38 +1,43 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package cl.unibiblioduocuc.modelo;
 
 /**
  *
  * @author Gabriel Serrano
+ * @version 1.1
  */
 public class Libro {
+
     private int id;
     private String titulo;
-    private String nomAutor;
+    private String autor;
     private String editorial;
-    private int annoPublicacion;
+    private int fecha;
     private String genero;
     private String isbn;
     private String estado;
     private String coleccion;
-    private String resenna;
 
-    //Constructores
+    /* Constructores */
     public Libro() {
     }
 
     public Libro(int id, String titulo, String nomAutor, String editorial, int annoPublicacion, String genero, String isbn, String estado, String coleccion) {
         this.id = id;
         this.titulo = titulo;
-        this.nomAutor = nomAutor;
+        this.autor = nomAutor;
         this.editorial = editorial;
-        this.annoPublicacion = annoPublicacion;
+        this.fecha = annoPublicacion;
         this.genero = genero;
         this.isbn = isbn;
         this.estado = estado;
         this.coleccion = coleccion;
     }
 
-    //Getters y Setters
+    /* Getter y Setters */
     public int getId() {
         return id;
     }
@@ -49,12 +54,12 @@ public class Libro {
         this.titulo = titulo;
     }
 
-    public String getNomAutor() {
-        return nomAutor;
+    public String getAutor() {
+        return autor;
     }
 
-    public void setNomAutor(String nomAutor) {
-        this.nomAutor = nomAutor;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
     public String getEditorial() {
@@ -65,12 +70,12 @@ public class Libro {
         this.editorial = editorial;
     }
 
-    public int getAnnoPublicacion() {
-        return annoPublicacion;
+    public int getFecha() {
+        return fecha;
     }
 
-    public void setAnnoPublicacion(int annoPublicacion) {
-        this.annoPublicacion = annoPublicacion;
+    public void setFecha(int fecha) {
+        this.fecha = fecha;
     }
 
     public String getGenero() {
@@ -105,32 +110,30 @@ public class Libro {
         this.coleccion = coleccion;
     }
 
-    public String getResenna() {
-        return resenna;
-    }
-
-    public void setResenna(String resenna) {
-        this.resenna = resenna;
-    }
-
     @Override
     public String toString() {
-        return "Libro{" + "id=" + id + ", titulo=" + titulo + ", nomAutor=" + nomAutor + ", editorial=" + editorial + ", annoPublicacion=" + annoPublicacion + ", genero=" + genero + ", isbn=" + isbn + ", estado=" + estado + ", coleccion=" + coleccion + ", resenna=" + resenna + '}';
+        return "Libro{" + "id=" + id + ", titulo=" + titulo + ", nomAutor=" + autor + ", editorial=" + editorial + ", annoPublicacion=" + fecha + ", genero=" + genero + ", isbn=" + isbn + ", estado=" + estado + ", coleccion=" + coleccion + '}';
     }
+
     
     //Métodos customizados
-    public void imprimirDetalles(){
-        System.out.println(
-                "ID: " + id + "\n" +
-                "Título: " + titulo + "\n" +
-                "Autor: " + nomAutor + "\n" +
-                "Editorial: " + titulo + "\n" +
-                "Año: " + annoPublicacion + "\n" +
-                "Género: " + genero + "\n" +
-                "ISBN: " + isbn + "\n" +
-                "Colección: " + coleccion + "\n" +
-                "Estado: " + estado + "\n"
+    
+    /**
+     * Método para imprimir detalles de un libro.
+     * 
+     * 
+     * Método para imprimir detalles de un libro con un formato de salto de línea, sin requerir sout.
+     */
+    public void imprimirDetalles() {
+        System.out.println("ID: " + id + "\n"
+                + "Título: " + titulo + "\n"
+                + "Autor: " + autor + "\n"
+                + "Editorial: " + titulo + "\n"
+                + "Año: " + fecha + "\n"
+                + "Género: " + genero + "\n"
+                + "ISBN: " + isbn + "\n"
+                + "Colección: " + coleccion + "\n"
+                + "Estado: " + estado + "\n"
         );
     }
-    
 }
