@@ -9,6 +9,10 @@
 3. **🌈 Interfaz intuitiva**: Porque todos amamos interfaces bonitas.
 4. **🎨 Recursos innovadores**: `CardLayout`, `GridBagLayout`, y algunos íconos.
 
+## 🖌️Vistas
+1. **Mock-ups**: [Mock-ups realizados con figma]([https://www.figma.com/file/uHSHgEcfrLInbjqfPGhg8w/Wireframe?type=design&node-id=0-1&mode=design&t=EdZX2StL2DDQHYkW-0](https://www.figma.com/file/uHSHgEcfrLInbjqfPGhg8w/Wireframe?type=design&node-id=0%3A1&mode=design&t=EdZX2StL2DDQHYkW-1))
+2. **Diagramas**: [Diagramas de BD y de Clases hechos con FigJam](https://www.figma.com/file/imD3jqY0ZNe1QQvoeX2AKP/Arquitectura-UniBiblioDuoc?type=whiteboard&node-id=0%3A1&t=rOJHjvKXxFoq0dyX-1)
+
 ## 📝 Notas Técnicas
 
 - Hecho con mucho ☕ en **JavaSE 19** y construido con **Ant**.
