@@ -126,9 +126,8 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="jTxt_correo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
                 <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[64, 30]"/>
                 </Property>
@@ -178,12 +177,8 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
+            <Component class="javax.swing.JPasswordField" name="jPass_contrasenna">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField2"/>
-                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[64, 30]"/>
-                </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[70, 35]"/>
                 </Property>
@@ -408,11 +403,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="16_jTextField1">
-                  <CodeVariable name="jTextField1" type="8194" declaredType="javax.swing.JTextField"/>
+                <CodeExpression id="16_jTxt_correo">
+                  <CodeVariable name="jTxt_correo" type="8194" declaredType="javax.swing.JTextField"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jTextField1"/>
+                      <ComponentRef name="jTxt_correo"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>
@@ -641,11 +636,11 @@
                 <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component, java.lang.Object"/>
               </StatementProvider>
               <Parameters>
-                <CodeExpression id="33_jTextField2">
-                  <CodeVariable name="jTextField2" type="8194" declaredType="javax.swing.JTextField"/>
+                <CodeExpression id="33_jPass_contrasenna">
+                  <CodeVariable name="jPass_contrasenna" type="8194" declaredType="javax.swing.JPasswordField"/>
                   <ExpressionOrigin>
                     <ExpressionProvider type="ComponentRef">
-                      <ComponentRef name="jTextField2"/>
+                      <ComponentRef name="jPass_contrasenna"/>
                     </ExpressionProvider>
                   </ExpressionOrigin>
                 </CodeExpression>

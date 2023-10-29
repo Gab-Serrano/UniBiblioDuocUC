@@ -50,6 +50,9 @@ public class DataBase {
     }
     
     /* Métodos customizados */
+    
+    /* Métodos de usuarios */
+    
      /**
      * Método que llena la BD simulada con datos.
      *

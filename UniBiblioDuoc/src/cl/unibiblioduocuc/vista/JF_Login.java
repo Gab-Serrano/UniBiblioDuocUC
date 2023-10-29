@@ -4,20 +4,28 @@
  */
 package cl.unibiblioduocuc.vista;
 
+import cl.unibiblioduocuc.controlador.ContLogin;
+import cl.unibiblioduocuc.modelo.DataBase;
 import cl.unibiblioduocuc.utils.Utils;
+import javax.swing.JTextField;
 
 /**
  *
  * @author Gabriel
  */
 public class JF_Login extends javax.swing.JFrame {
-
+    
+    private DataBase db;
+    
     /**
      * Creates new form Login
      */
     public JF_Login() {
         initComponents();
         Utils.cambiarIconoJFrame(this);
+        
+        /* Inicializaciones */
+        this.db = new DataBase();
     }
 
     /**
@@ -35,10 +43,10 @@ public class JF_Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTxt_correo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jPass_contrasenna = new javax.swing.JPasswordField();
         jPanel_logo = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -91,17 +99,16 @@ public class JF_Login extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel2.add(jLabel2, gridBagConstraints);
 
-        jTextField1.setText("jTextField1");
-        jTextField1.setMinimumSize(new java.awt.Dimension(64, 30));
-        jTextField1.setName(""); // NOI18N
-        jTextField1.setPreferredSize(new java.awt.Dimension(70, 35));
+        jTxt_correo.setMinimumSize(new java.awt.Dimension(64, 30));
+        jTxt_correo.setName(""); // NOI18N
+        jTxt_correo.setPreferredSize(new java.awt.Dimension(70, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
-        jPanel2.add(jTextField1, gridBagConstraints);
+        jPanel2.add(jTxt_correo, gridBagConstraints);
 
         jButton1.setText("Ingresar");
         jButton1.setPreferredSize(new java.awt.Dimension(75, 30));
@@ -127,15 +134,13 @@ public class JF_Login extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         jPanel2.add(jLabel3, gridBagConstraints);
 
-        jTextField2.setText("jTextField2");
-        jTextField2.setMinimumSize(new java.awt.Dimension(64, 30));
-        jTextField2.setPreferredSize(new java.awt.Dimension(70, 35));
+        jPass_contrasenna.setPreferredSize(new java.awt.Dimension(70, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel2.add(jTextField2, gridBagConstraints);
+        jPanel2.add(jPass_contrasenna, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -176,9 +181,13 @@ public class JF_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+          ContLogin cl = new ContLogin(db);
+          cl.redigirLogin(this, db, cl.validarLogin(Utils.obtenerInput(jTxt_correo), Utils.obtenerInputPassword(jPass_contrasenna), db));
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /* Metodos customizados */
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -225,7 +234,7 @@ public class JF_Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel_login;
     private javax.swing.JPanel jPanel_logo;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField jPass_contrasenna;
+    private javax.swing.JTextField jTxt_correo;
     // End of variables declaration//GEN-END:variables
 }
