@@ -7,6 +7,8 @@ package cl.unibiblioduocuc.vista;
 import cl.unibiblioduocuc.controlador.ContLogin;
 import cl.unibiblioduocuc.modelo.DataBase;
 import cl.unibiblioduocuc.utils.Utils;
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -44,7 +46,7 @@ public class JF_Login extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTxt_correo = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jBttn_login = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPass_contrasenna = new javax.swing.JPasswordField();
         jPanel_logo = new javax.swing.JPanel();
@@ -102,6 +104,11 @@ public class JF_Login extends javax.swing.JFrame {
         jTxt_correo.setMinimumSize(new java.awt.Dimension(64, 30));
         jTxt_correo.setName(""); // NOI18N
         jTxt_correo.setPreferredSize(new java.awt.Dimension(70, 35));
+        jTxt_correo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTxt_correoKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -110,11 +117,11 @@ public class JF_Login extends javax.swing.JFrame {
         gridBagConstraints.weightx = 0.1;
         jPanel2.add(jTxt_correo, gridBagConstraints);
 
-        jButton1.setText("Ingresar");
-        jButton1.setPreferredSize(new java.awt.Dimension(75, 30));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBttn_login.setText("Ingresar");
+        jBttn_login.setPreferredSize(new java.awt.Dimension(75, 30));
+        jBttn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBttn_loginActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -122,7 +129,7 @@ public class JF_Login extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        jPanel2.add(jButton1, gridBagConstraints);
+        jPanel2.add(jBttn_login, gridBagConstraints);
 
         jLabel3.setForeground(new java.awt.Color(229, 229, 229));
         jLabel3.setText("Contraseña:");
@@ -135,6 +142,11 @@ public class JF_Login extends javax.swing.JFrame {
         jPanel2.add(jLabel3, gridBagConstraints);
 
         jPass_contrasenna.setPreferredSize(new java.awt.Dimension(70, 35));
+        jPass_contrasenna.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPass_contrasennaKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 2;
@@ -180,10 +192,30 @@ public class JF_Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          ContLogin cl = new ContLogin(db);
-          cl.redigirLogin(this, db, cl.validarLogin(Utils.obtenerInput(jTxt_correo), Utils.obtenerInputPassword(jPass_contrasenna), db));
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jBttn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBttn_loginActionPerformed
+        String password = String.valueOf(jPass_contrasenna.getPassword());
+        if (jTxt_correo.getText().isEmpty() && password.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debe ingresar sus credenciales.", "Error de ingreso", JOptionPane.ERROR_MESSAGE);
+        } else {
+            ContLogin cl = new ContLogin(db);
+         cl.redigirLogin(this, db, cl.validarLogin(Utils.obtenerInput(jTxt_correo), Utils.obtenerInputPassword(jPass_contrasenna), db));
+        }
+  
+        
+        
+    }//GEN-LAST:event_jBttn_loginActionPerformed
+
+    private void jTxt_correoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxt_correoKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jBttn_login.doClick();
+        }
+    }//GEN-LAST:event_jTxt_correoKeyPressed
+
+    private void jPass_contrasennaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPass_contrasennaKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jBttn_login.doClick();
+        }
+    }//GEN-LAST:event_jPass_contrasennaKeyPressed
 
     /* Metodos customizados */
     
@@ -225,7 +257,7 @@ public class JF_Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jBttn_login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -5,6 +5,9 @@
 package cl.unibiblioduocuc.vista;
 
 import cl.unibiblioduocuc.modelo.DataBase;
+import cl.unibiblioduocuc.utils.Utils;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
@@ -22,6 +25,7 @@ public class Principal extends javax.swing.JFrame {
     }
     
     public Principal() {
+        this.db = new DataBase();
         initComponents();
     }
 
@@ -33,45 +37,314 @@ public class Principal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel_PanelBtn_Libros = new javax.swing.JPanel();
+        jBtn_Libros = new javax.swing.JLabel();
+        jPanel_PanelBtn_Prestamos = new javax.swing.JPanel();
+        jBtn_Prestamos = new javax.swing.JLabel();
+        jPanel_PanelBtn_Salir = new javax.swing.JPanel();
+        jBtn_Salir = new javax.swing.JLabel();
+        jPanel_Parent = new javax.swing.JPanel();
+        jPanel_Child_Libros = new javax.swing.JPanel();
+        jPanel_Child_Prestamos = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel1.setMinimumSize(new java.awt.Dimension(150, 670));
+        jPanel1.setPreferredSize(new java.awt.Dimension(150, 270));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 358, Short.MAX_VALUE)
+        jPanel3.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel3.setLayout(new java.awt.GridBagLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(229, 229, 229));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Bienvenido");
+        jLabel1.setPreferredSize(new java.awt.Dimension(150, 25));
+        jLabel1.setRequestFocusEnabled(false);
+        jPanel3.add(jLabel1, new java.awt.GridBagConstraints());
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(229, 229, 229));
+        jLabel2.setText("nombre_empleado");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        jPanel3.add(jLabel2, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.1;
+        jPanel1.add(jPanel3, gridBagConstraints);
+
+        jPanel4.setBackground(new java.awt.Color(0, 51, 102));
+        java.awt.GridBagLayout jPanel4Layout = new java.awt.GridBagLayout();
+        jPanel4Layout.columnWidths = new int[] {0};
+        jPanel4Layout.rowHeights = new int[] {0, 30, 0, 30, 0};
+        jPanel4.setLayout(jPanel4Layout);
+
+        jPanel_PanelBtn_Libros.setBackground(new java.awt.Color(229, 229, 229));
+        jPanel_PanelBtn_Libros.setPreferredSize(new java.awt.Dimension(200, 55));
+        jPanel_PanelBtn_Libros.setRequestFocusEnabled(false);
+        jPanel_PanelBtn_Libros.setLayout(new java.awt.BorderLayout());
+
+        jBtn_Libros.setBackground(new java.awt.Color(255, 255, 255));
+        jBtn_Libros.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jBtn_Libros.setForeground(new java.awt.Color(0, 34, 68));
+        jBtn_Libros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jBtn_Libros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cl/unibiblioduocuc/img/jBtn_Libros-icon-fill.png"))); // NOI18N
+        jBtn_Libros.setText("Libros");
+        jBtn_Libros.setMinimumSize(new java.awt.Dimension(81, 15));
+        jBtn_Libros.setName("jBtn_Libros"); // NOI18N
+        jBtn_Libros.setPreferredSize(new java.awt.Dimension(81, 15));
+        jBtn_Libros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtn_LibrosMouseClicked(evt);
+            }
+        });
+        jPanel_PanelBtn_Libros.add(jBtn_Libros, java.awt.BorderLayout.CENTER);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.weightx = 0.1;
+        jPanel4.add(jPanel_PanelBtn_Libros, gridBagConstraints);
+
+        jPanel_PanelBtn_Prestamos.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel_PanelBtn_Prestamos.setPreferredSize(new java.awt.Dimension(200, 55));
+        jPanel_PanelBtn_Prestamos.setLayout(new java.awt.BorderLayout());
+
+        jBtn_Prestamos.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jBtn_Prestamos.setForeground(new java.awt.Color(229, 229, 229));
+        jBtn_Prestamos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jBtn_Prestamos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cl/unibiblioduocuc/img/jBtn_Prestamos-icon-blank.png"))); // NOI18N
+        jBtn_Prestamos.setText("Préstamos");
+        jBtn_Prestamos.setName("jBtn_Prestamos"); // NOI18N
+        jBtn_Prestamos.setPreferredSize(new java.awt.Dimension(118, 5));
+        jBtn_Prestamos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtn_PrestamosMouseClicked(evt);
+            }
+        });
+        jPanel_PanelBtn_Prestamos.add(jBtn_Prestamos, java.awt.BorderLayout.CENTER);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.weightx = 0.1;
+        jPanel4.add(jPanel_PanelBtn_Prestamos, gridBagConstraints);
+
+        jPanel_PanelBtn_Salir.setBackground(new java.awt.Color(229, 229, 229));
+        jPanel_PanelBtn_Salir.setPreferredSize(new java.awt.Dimension(200, 55));
+        jPanel_PanelBtn_Salir.setLayout(new java.awt.BorderLayout());
+
+        jBtn_Salir.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jBtn_Salir.setForeground(new java.awt.Color(0, 0, 102));
+        jBtn_Salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jBtn_Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cl/unibiblioduocuc/img/Key.png"))); // NOI18N
+        jBtn_Salir.setText("Salir");
+        jBtn_Salir.setName("jBtn_Salir"); // NOI18N
+        jBtn_Salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtn_SalirMouseClicked(evt);
+            }
+        });
+        jPanel_PanelBtn_Salir.add(jBtn_Salir, java.awt.BorderLayout.CENTER);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.weightx = 0.1;
+        jPanel4.add(jPanel_PanelBtn_Salir, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.2;
+        jPanel1.add(jPanel4, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.1;
+        getContentPane().add(jPanel1, gridBagConstraints);
+
+        jPanel_Parent.setBackground(new java.awt.Color(229, 229, 229));
+        jPanel_Parent.setPreferredSize(new java.awt.Dimension(700, 670));
+        jPanel_Parent.setLayout(new java.awt.CardLayout());
+
+        jPanel_Child_Libros.setBackground(new java.awt.Color(204, 255, 204));
+
+        javax.swing.GroupLayout jPanel_Child_LibrosLayout = new javax.swing.GroupLayout(jPanel_Child_Libros);
+        jPanel_Child_Libros.setLayout(jPanel_Child_LibrosLayout);
+        jPanel_Child_LibrosLayout.setHorizontalGroup(
+            jPanel_Child_LibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        jPanel_Child_LibrosLayout.setVerticalGroup(
+            jPanel_Child_LibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 670, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(243, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(236, 236, 236))
+        jPanel_Parent.add(jPanel_Child_Libros, "card2");
+
+        jPanel_Child_Prestamos.setBackground(new java.awt.Color(255, 102, 51));
+
+        javax.swing.GroupLayout jPanel_Child_PrestamosLayout = new javax.swing.GroupLayout(jPanel_Child_Prestamos);
+        jPanel_Child_Prestamos.setLayout(jPanel_Child_PrestamosLayout);
+        jPanel_Child_PrestamosLayout.setHorizontalGroup(
+            jPanel_Child_PrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(284, 284, 284)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(308, Short.MAX_VALUE))
+        jPanel_Child_PrestamosLayout.setVerticalGroup(
+            jPanel_Child_PrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 670, Short.MAX_VALUE)
         );
+
+        jPanel_Parent.add(jPanel_Child_Prestamos, "card3");
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.7;
+        gridBagConstraints.weighty = 0.1;
+        getContentPane().add(jPanel_Parent, gridBagConstraints);
+
+        jMenu1.setText("Archivo");
+
+        jMenuItem1.setText("Añadir libro");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+        jMenu1.add(jSeparator1);
+
+        jMenuItem3.setText("Cerrar sesión");
+        jMenu1.add(jMenuItem3);
+
+        jMenuItem4.setText("Cerrar");
+        jMenu1.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Editar");
+
+        jMenuItem5.setText("Editar libro");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem5);
+
+        jMenuItem6.setText("Eliminar libro");
+        jMenu2.add(jMenuItem6);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Ayuda");
+
+        jMenuItem7.setText("Acerca de");
+        jMenu3.add(jMenuItem7);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         setSize(new java.awt.Dimension(850, 700));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jBtn_LibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtn_LibrosMouseClicked
+        JLabel etiqueta = (JLabel) evt.getSource();
+        Utils.cambiarPanel(this, this.jPanel_Parent, this.jPanel_Child_Libros, this.jPanel_PanelBtn_Libros, etiqueta);
+    }//GEN-LAST:event_jBtn_LibrosMouseClicked
+
+    private void jBtn_SalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtn_SalirMouseClicked
+        JLabel etiqueta = (JLabel) evt.getSource();
+        Utils.cambiarPanel(this, this.jPanel_Parent, this.jPanel_Child_Libros, this.jPanel_PanelBtn_Prestamos, etiqueta);
+    }//GEN-LAST:event_jBtn_SalirMouseClicked
+
+    private void jBtn_PrestamosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtn_PrestamosMouseClicked
+        JLabel etiqueta = (JLabel) evt.getSource();
+        Utils.cambiarPanel(this, this.jPanel_Parent, this.jPanel_Child_Prestamos, this.jPanel_PanelBtn_Salir, etiqueta);
+    }//GEN-LAST:event_jBtn_PrestamosMouseClicked
+
+    public JLabel getjBtn_Libros() {
+        return jBtn_Libros;
+    }
+
+    public JLabel getjBtn_Prestamos() {
+        return jBtn_Prestamos;
+    }
+
+    public JLabel getjBtn_Salir() {
+        return jBtn_Salir;
+    }
+
+    public JPanel getjPanel_Child_Libros() {
+        return jPanel_Child_Libros;
+    }
+
+    public JPanel getjPanel_Child_Prestamos() {
+        return jPanel_Child_Prestamos;
+    }
+
+    public JPanel getjPanel_PanelBtn_Libros() {
+        return jPanel_PanelBtn_Libros;
+    }
+
+    public JPanel getjPanel_PanelBtn_Prestamos() {
+        return jPanel_PanelBtn_Prestamos;
+    }
+
+    public JPanel getjPanel_PanelBtn_Salir() {
+        return jPanel_PanelBtn_Salir;
+    }
+
+    public JPanel getjPanel_Parent() {
+        return jPanel_Parent;
+    }
+
+   
+    
+
+    
     /**
      * @param args the command line arguments
      */
@@ -108,6 +381,30 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jBtn_Libros;
+    private javax.swing.JLabel jBtn_Prestamos;
+    private javax.swing.JLabel jBtn_Salir;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel_Child_Libros;
+    private javax.swing.JPanel jPanel_Child_Prestamos;
+    private javax.swing.JPanel jPanel_PanelBtn_Libros;
+    private javax.swing.JPanel jPanel_PanelBtn_Prestamos;
+    private javax.swing.JPanel jPanel_PanelBtn_Salir;
+    private javax.swing.JPanel jPanel_Parent;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
