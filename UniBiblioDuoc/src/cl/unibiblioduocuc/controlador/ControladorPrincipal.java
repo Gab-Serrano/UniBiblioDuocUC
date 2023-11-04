@@ -1,7 +1,7 @@
 package cl.unibiblioduocuc.controlador;
 
 import cl.unibiblioduocuc.modelo.Libro;
-import cl.unibiblioduocuc.modelo.TestBD;
+import cl.unibiblioduocuc.modelo.bd.TestBD;
 import cl.unibiblioduocuc.vista.gestionlibros.VistaAgregarLibros;
 import cl.unibiblioduocuc.vista.gestionlibros.VistaEditarLibros;
 import java.util.ArrayList;

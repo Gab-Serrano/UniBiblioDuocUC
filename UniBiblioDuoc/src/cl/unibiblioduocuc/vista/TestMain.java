@@ -1,7 +1,7 @@
 package cl.unibiblioduocuc.vista;
 
 import cl.unibiblioduocuc.modelo.Libro;
-import cl.unibiblioduocuc.modelo.TestBD;
+import cl.unibiblioduocuc.modelo.bd.TestBD;
 import java.awt.Label;
 import javax.swing.JRadioButton;
 

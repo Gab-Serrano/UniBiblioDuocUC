@@ -1,5 +1,9 @@
-package cl.unibiblioduocuc.modelo;
+package cl.unibiblioduocuc.modelo.bd;
 
+import cl.unibiblioduocuc.modelo.Bibliotecario;
+import cl.unibiblioduocuc.modelo.Libro;
+import cl.unibiblioduocuc.modelo.Prestamo;
+import cl.unibiblioduocuc.modelo.Usuario;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -207,3 +211,4 @@ public class TestBD {
         return maxId;
     }
 }
+

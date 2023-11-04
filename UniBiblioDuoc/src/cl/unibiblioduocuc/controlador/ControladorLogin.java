@@ -1,6 +1,6 @@
 package cl.unibiblioduocuc.controlador;
 
-import cl.unibiblioduocuc.modelo.TestBD;
+import cl.unibiblioduocuc.modelo.bd.TestBD;
 import cl.unibiblioduocuc.vista.VistaPrincipal;
 import cl.unibiblioduocuc.vista.VistaLogin;
 import javax.swing.JOptionPane;

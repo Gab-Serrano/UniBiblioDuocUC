@@ -3,7 +3,7 @@ package cl.unibiblioduocuc.vista;
 import cl.unibiblioduocuc.controlador.ControladorPrincipal;
 import cl.unibiblioduocuc.modelo.Bibliotecario;
 import cl.unibiblioduocuc.modelo.Libro;
-import cl.unibiblioduocuc.modelo.TestBD;
+import cl.unibiblioduocuc.modelo.bd.TestBD;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Desktop;

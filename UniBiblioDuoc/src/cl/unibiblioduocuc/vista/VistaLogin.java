@@ -5,7 +5,7 @@
 package cl.unibiblioduocuc.vista;
 
 import cl.unibiblioduocuc.controlador.ControladorLogin;
-import cl.unibiblioduocuc.modelo.TestBD;
+import cl.unibiblioduocuc.modelo.bd.TestBD;
 import cl.unibiblioduocuc.utils.Utils;
 import java.awt.event.KeyEvent;
 

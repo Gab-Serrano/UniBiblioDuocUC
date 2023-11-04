@@ -6,7 +6,7 @@ package cl.unibiblioduocuc.vista.gestionlibros;
 
 import cl.unibiblioduocuc.controlador.ControladorPrincipal;
 import cl.unibiblioduocuc.modelo.Libro;
-import cl.unibiblioduocuc.modelo.TestBD;
+import cl.unibiblioduocuc.modelo.bd.TestBD;
 import javax.swing.DefaultComboBoxModel;
 
 /**

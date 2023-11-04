@@ -14,7 +14,6 @@ public class Libro {
     private String isbn;
     private String estado;
     private String coleccion;
-    private String resenna;
 
     //Constructores
     public Libro() {
@@ -105,17 +104,9 @@ public class Libro {
         this.coleccion = coleccion;
     }
 
-    public String getResenna() {
-        return resenna;
-    }
-
-    public void setResenna(String resenna) {
-        this.resenna = resenna;
-    }
-
     @Override
     public String toString() {
-        return "Libro{" + "id=" + id + ", titulo=" + titulo + ", nomAutor=" + nomAutor + ", editorial=" + editorial + ", annoPublicacion=" + annoPublicacion + ", genero=" + genero + ", isbn=" + isbn + ", estado=" + estado + ", coleccion=" + coleccion + ", resenna=" + resenna + '}';
+        return "Libro{" + "id=" + id + ", titulo=" + titulo + ", nomAutor=" + nomAutor + ", editorial=" + editorial + ", annoPublicacion=" + annoPublicacion + ", genero=" + genero + ", isbn=" + isbn + ", estado=" + estado + ", coleccion=" + coleccion + '}';
     }
     
     //Métodos customizados
